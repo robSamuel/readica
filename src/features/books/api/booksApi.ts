@@ -1,4 +1,4 @@
-import { axiosInstance } from '../../../shared/lib/axios';
+import { axiosInstance } from '@/shared/lib/axios';
 import type { GutendexResponse } from '../types/book.types';
 
 export const getBooks = async (

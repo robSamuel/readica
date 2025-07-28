@@ -1,34 +1,17 @@
-import { useState } from 'react';
-import viteLogo from '/vite.svg';
-import reactLogo from './assets/react.svg';
+import { Navigate, Route, Routes, } from 'react-router-dom';
+import BookListPage from './features/books/pages/BookListPage';
+import Header from './shared/components/Header';
 
-function App() {
-	const [count, setCount] = useState(0);
-
-	return (
-		<>
-			<div>
-				<a href="https://vite.dev" target="_blank" rel="noopener">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank" rel="noopener">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button type="button" onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
-	);
-}
+const App: React.FC = () => (
+	<div className="min-h-screen bg-background text-foreground">
+		<Header />
+		<main className="p-4">
+			<Routes>
+				<Route path="/" element={<BookListPage />} />
+				<Route path="*" element={<Navigate to="/" replace />} />
+			</Routes>
+		</main>
+	</div>
+)
 
 export default App;

@@ -1,5 +1,6 @@
 import BookCard from '../components/BookCard';
 import useBooks from '../hooks/useBooks';
+import { Button } from '@/shared/components/ui/button';
 
 const BookListPage: React.FC = () => {
 	const { data, isLoading, isError } = useBooks();
@@ -15,6 +16,7 @@ const BookListPage: React.FC = () => {
 	return (
 		<div className="p-4">
 			<h2 className="text-2xl font-bold mb-4">Books</h2>
+			<Button>Example</Button>
 			<div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 !important ">
 				{renderBooks()}
 			</div>
